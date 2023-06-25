@@ -47,8 +47,8 @@ const updateEvent = async (req, res) => {
 // @access PUBLIC
 
 const getEvents = asyncHandler(async (req, res) => {
-    // postman reiksme (user: 'req.body.id') ir lakinas iharkodinimas 
-    const events = await Events.find({ user: req.body.id });
+    // postman reiksme (id: 'req.body.id') ir lakinas iharkodinimas 
+    const events = await Events.find({ id: req.body.id });
     if (!events) {
         res.status(400)
         throw new Error('Events not found');
